@@ -9,8 +9,8 @@ However, It seemed like regularization method did not make any impact when using
 
 In the result, SckitLearn and Statsmodel(uses McFadden’s pseudo-R-squared) are using different types of rSquared method, and they produce different results.
 
-![Result of sklearn](images/sklearn.png =50x50)
-![Result of statsmodel](images/statsmodel.png =50x50)
+![Result of sklearn](images/sklearn.png)
+![Result of statsmodel](images/statsmodel.png)
 
 __Lifeline result:__
 
