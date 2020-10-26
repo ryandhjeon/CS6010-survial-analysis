@@ -1,32 +1,31 @@
 # Reflection
-The goal of the assignment was to predict survival on HCC Survival data using Logistic Regression and Survial Analysis. 
+The goal of this assignment was to predict survival on HCC Survival data using Logistic Regression and Survival Analysis.
 
-To achieve the goal, we had to explore what the data looks like, imputed it to fill in the missing data using SimpleImputer and IterativeImputer from ScikitLearn, and then created new datasets using Mean, Median, Most Frequent, and IterativeImputer. And then, logistic regression was used to predict survival using Statsmodel and SckitLearn, and measured the impact of using Lasso, Ridge, and ElasticNet Regularization. Finally, LifeLines library was used to perform the survival analysis on each dataset to see if the results were different.
+To achieve this goal, we explored what the data looked like, imputed missing data using SimpleImputer and IterativeImputer from ScikitLearn, and created four new datasets called Mean, Median, Most Frequent, and IterativeImputer. After, logistic regression was used to predict survival using Statsmodels and ScikitLearn. In addition, logistic regression was used in order to measure the impact of Lasso, Ridge, and ElasticNet Regularization. Finally, LifeLines was used to perform the survival analysis on each dataset to see whether the results were different.
 
-The different regularization methods did impact when using SckitLearn, as we did see the different results. With the result from SkLearn, we choosed to go with the Lasso in Mode data for good rSquared of 0.81. We thought having negative values were the errors from Sklearn, but from the official documentation([Link](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html)), it mentioned that the rSquared may be negatives. To check if we did not make any mistake, we implemented Efron's R squared([Link](https://thestatsgeek.com/2014/02/08/r-squared-in-logistic-regression/)), but we still got the similar results. We tried with the McFadden's adjusted rSquared method, which resulted in a better result, similar to the results of StatsModel's result without any negative values.
+The different regularization methods had an impact when using SckitLearn, as we saw the different results. From SkLearn, we chose to proceed with the Lasso regularization from the Mode dataset with a rSquared of 0.81. We thought having negative values were the errors from Sklearn, but from the official documentation([Link](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.r2_score.html)), the rSquared values could be negatives. To check whether we didn’t make any mistakes, we implemented Efron's R squared([Link](https://thestatsgeek.com/2014/02/08/r-squared-in-logistic-regression/)), but we still got similar results. We tried the McFadden's adjusted rSquared method, which gave a better result, similar to the results of StatsModels without any negative values.
 
-However, It seemed like regularization method did not make any impact when using StatsModels, as the results came out to be same. With the result from Statsmodel, we choose mode data with the best performance. Even though the accuracy was low, we primarily looked at the rSquared value as a primary when deciding the best performed method.
+However, It seemed like the regularization method did not make any impact when using StatsModels, as the results turned out to be the same. With the results from Statsmodels, we chose the mode dataset with the best performance. Even though the accuracy was low, we primarily looked at the rSquared value when deciding the best performance method.
 
-In the result, SckitLearn and Statsmodel(uses McFadden’s pseudo-R-squared) are using different types of rSquared method, and they produce different results.
+In the result, ScikitLearn and Statsmodels(uses McFadden's pseudo-R-squared) uses different types of rSquared methods, which also produce different results.
 
 ![Result of sklearn](images/sklearn.png)
 ![Result of statsmodel](images/statsmodel.png)
 
 __Lifeline result:__
 
-We picked Hemoglobin, Albumin and Iron for the analysis.
+We picked the columns (‘Hemoglobin’, ‘Albumin’, ‘Iron’) for the analysis.
 
-For all the imputed dataset, Hemoglobin, Albumin were not so significant since P value was greater than alpha of 0.05.
+For all the imputed datasets, ‘Hemoglobin’ and ‘Albumin’ were not significant because the P value was greater than 0.05.
 
 1. Mean Imputed data:
-Logistic regression: The increase of Iron resulted in increase of class, basically the 8% increase in the chance of survival. The confidence interval was between 0.2% and 15%. Survival analysis: The increase of 1 in Iron increased in survial of 1%. The confidence interval was between 1% and 2%.
+Logistic regression: The increase of ‘Iron’ resulted in increase of ‘class’, basically the 8% increase in the chance of survival. The confidence interval was between 0.2% and 15%. Survival analysis: The increase of 1 in ‘Iron’ increased in the survival of 1%. The confidence interval was between 1% and 2%.
 
-2. Mode and median imputed data: 
-We pretty much got same result as a mean imputed dataset.
+2. Mode and median imputed data:
+Similar results to the mean imputed dataset.
 
-3. Iterative imputed data: 
-We got the result of even the iron not being so significant. 
-
+3. Iterative imputed data:
+We obtained the result despite the column ‘iron’ not being significant.
 
 All python requirements are stored in `requirements.txt`. Run the code below to install the requirements.
 
