@@ -16,9 +16,7 @@ We picked Hemoglobin, Albumin and Iron for the analysis.
 For all the imputed dataset, Hemoglobin, Albumin were not so significant since P value was greater than alpha of 0.05.
 
 1. Mean Imputed data:
-Logistic regression: The increase of Iron resulted in increase of class, basically the 8% increase in the chance of survival. The confidence interval was between 0.2% and 15%.
-
-Survival analysis: The increase of 1 in Iron increased in survial of 1%. The confidence interval was between 1% and 2%.
+Logistic regression: The increase of Iron resulted in increase of class, basically the 8% increase in the chance of survival. The confidence interval was between 0.2% and 15%. Survival analysis: The increase of 1 in Iron increased in survial of 1%. The confidence interval was between 1% and 2%.
 
 2. Mode and median imputed data: 
 We pretty much got same result as a mean imputed dataset.
